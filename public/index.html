@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"> 
+        <title>Curve Collector</title>
+    </head>
+    <body style="margin: 0; padding: 0;">
+        <div id="root"></div>
+        <script>
+            window.onload = () =>{
+                document.getElementById('root').style.opacity = 1;
+            }
+        </script>
+
+        <script id="vertex-shader-2d" type="notjs">
+            precision mediump float;
+            attribute vec3 a_position;
+            vec4 u_position;
+            uniform vec4 u_color;
+            uniform mat4 u_projection;
+            uniform float u_pointSize;
+        
+            void main() {
+                u_position = vec4(a_position.xyz, 1.0);
+                gl_Position = u_projection*u_position;
+                gl_PointSize = u_pointSize;
+            }
+        
+        </script>
+        
+        <script id="fragment-shader-2d" type="notjs">
+            precision mediump float;
+            uniform vec4 u_color;
+
+            void main() {
+                gl_FragColor = u_color;
+            }
+        </script>
+    </body>
+</html>
