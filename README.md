@@ -6,7 +6,7 @@ Simple application to draw lines with webgl and javascript, and react (?)
 https://nodejs.org/en/
 
 ### Clone the repository
-git clone https://nodejs.org/en/
+git clone https://github.com/soaresrl/simple-drawer.git
 
 ### Install libraries in package.json
 npm install
